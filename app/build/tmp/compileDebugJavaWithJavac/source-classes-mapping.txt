@@ -1,2 +1,0 @@
-id/ac/ui/cs/mobileprogramming/josedevian/timetrack/BuildConfig.java
- id.ac.ui.cs.mobileprogramming.josedevian.timetrack.BuildConfig

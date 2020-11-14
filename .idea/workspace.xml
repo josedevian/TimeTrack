@@ -1,45 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcffbd77-8539-4176-a157-b3c4dff46b99" name="Default Changelist" comment="" />
+    <list default="true" id="b9386fb8-2f4f-4ee5-a18e-a054eeaf4eb4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view />
-      </state>
-    </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Kotlin Class" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectId" id="1kCR9WGH53iw0iFUPhyHZfXd7Gc" />
+  <component name="ProjectId" id="1kHtCCTieqGa7Kzy1JrFegAktyW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -49,7 +30,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="TimeTrack.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -112,22 +93,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dcffbd77-8539-4176-a157-b3c4dff46b99" name="Default Changelist" comment="" />
-      <created>1605202435482</created>
+      <changelist id="b9386fb8-2f4f-4ee5-a18e-a054eeaf4eb4" name="Default Changelist" comment="" />
+      <created>1605369214427</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1605202435482</updated>
+      <updated>1605369214427</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="499" y="164" key="#com.intellij.ide.util.MemberChooser" timestamp="1605341175222">
-      <screen x="0" y="23" width="1440" height="837" />
-    </state>
-    <state x="499" y="164" key="#com.intellij.ide.util.MemberChooser/0.23.1440.837@0.23.1440.837" timestamp="1605341175222" />
-    <state x="408" y="184" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1605291883482">
-      <screen x="0" y="23" width="1440" height="837" />
-    </state>
-    <state x="408" y="184" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.837@0.23.1440.837" timestamp="1605291883482" />
   </component>
 </project>
