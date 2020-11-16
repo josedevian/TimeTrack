@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TimeTrack</string>
+    <string name="start">Mulai</string>
+    <string name="stop">Berhenti</string>
+    <string name="reset">Ulang</string>
+    <string name="save">Simpan</string>
+    <string name="task_duration">Durasi</string>
+    <string name="project">Proyek</string>
+    <string name="label">Label</string>
+    <string name="task_end">Waktu Berakhir</string>
+    <string name="task_start">Waktu Mulai</string>
+    <string name="task_list">Daftar Tugas</string>
+    <string name="cancel">Batal</string>
+    <string name="delete">Hapus</string>
+    <string name="save_alert">Simpan Waktu sebagai Tugas</string>
+    <string name="success_save">Tugas berhasil disimpan.</string>
+</resources>

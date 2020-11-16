@@ -8,33 +8,59 @@
     tools:context=".fragments.Stopwatch">
 
     <TextView
-        android:id="@+id/stopwatch"
-        android:text="00:00:00"
+        android:id="@+id/text_view_stopwatch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="70dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginVertical="20dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="00:00"
+        android:textColor="@android:color/black"
+        android:textSize="60sp"
+        android:paddingBottom="16sp"/>
 
-    <Button
-        android:id="@+id/start_stopwatch"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:text="Start"
-        android:background="@color/colorPrimary"/>
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/pause_stopwatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pause" />
+        <Button
+            android:id="@+id/button_start_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_below="@+id/text_view_stopwatch"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:text="@string/start"
+            android:paddingBottom="16sp"/>
 
-    <Button
-        android:id="@+id/reset_stopwatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset" />
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_below="@+id/button_start_pause"
+            android:layout_marginStart="11dp"
+            android:layout_centerHorizontal="true"
+            android:layout_toEndOf="@+id/button_start_pause"
+            android:layout_weight="1"
+            android:text="@string/reset"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:paddingBottom="16sp"/>
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/button_reset"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@id/button_reset"
+            android:layout_weight="1"
+            android:text="@string/save"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+    </LinearLayout>
 
 </LinearLayout>

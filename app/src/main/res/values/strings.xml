@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">TimeTrack</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="reset">Reset</string>
+    <string name="save">Save</string>
+    <string name="task_list">Task List</string>
+    <string name="task_duration">Task Duration</string>
+    <string name="task_start">Start Time</string>
+    <string name="task_end">End Time</string>
+    <string name="project">Project</string>
+    <string name="label">Label</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="save_alert">Save Time for Task</string>
+    <string name="success_save">Task succesfully saved.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

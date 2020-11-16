@@ -1,51 +1,82 @@
 package id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.os.Handler
 import android.view.View
-import android.view.ViewGroup
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.R
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_stopwatch.view.*
 
 
 class Stopwatch : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private var seconds = 0
+    private var running = false
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_stopwatch, container, false)
-        val stopwatch = view.findViewById(R.id.stopwatch)
-        val startButton = view.findViewById(R.id.start_stopwatch)
-        val pauseButton = view.findViewById(R.id.pause_stopwatch)
-        val resetButton = view.findViewById(R.id.reset_stopwatch)
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_stopwatch)
+        if (savedInstanceState != null) {
+            seconds = savedInstanceState.getInt("seconds")
+            running = savedInstanceState.getBoolean("running")
+        }
+        runTimer()
+    }
 
-        if ((activity as MainActivity).stopwatchIsRunning) {
-            startButton.isEnabled = false
-            resetButton.isEnabled = false
-        }
-        (activity as MainActivity).stopwatchText = stopwatch
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.putInt("seconds", seconds)
+        savedInstanceState.putBoolean("running", running)
+    }
 
-        startButton.setOnClickListener {
-            (activity as MainActivity).startStopwatch()
-            startButton.isEnabled = false
-            resetButton.isEnabled = false
-        }
-        pauseButton.setOnClickListener {
-            (activity as MainActivity).pauseStopwatch()
-            startButton.isEnabled = true
-            resetButton.isEnabled = true
-        }
-        resetButton.setOnClickListener {
-            (activity as MainActivity).resetStopwatch()
-            stopwatch.text = "00:00:00"
-        }
 
-        return view
+    fun onClickStart(v: View?) {
+        running = true
+    }
+
+    fun onClickStop(v: View?) {
+        running = false
+    }
+
+    fun onClickReset(v: View?) {
+        running = false
+        seconds = 0
+    }
+
+
+    private fun runTimer() {
+        val timeView = findViewById(R.id.text_view_stopwatch) as TextView
+        val handler = Handler()
+        handler.post(object : Runnable {
+            override fun run() {
+                val hours = seconds / 3600
+                val minutes = seconds % 3600 / 60
+                val secs = seconds % 60
+                val time: String = java.lang.String.format(
+                    Locale.getDefault(),
+                    "%d:%02d:%02d",
+                    hours,
+                    minutes,
+                    secs
+                )
+                timeView.text = time
+                if (running) {
+                    seconds++
+                }
+                handler.postDelayed(this, 1000)
+            }
+        })
+    }
+
+    fun onClickSave(v: View?) {
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
+
+        builder.setTitle(getString())
     }
 
 }

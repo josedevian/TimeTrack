@@ -1,18 +1,22 @@
 package id.ac.ui.cs.mobileprogramming.josedevian.timetrack
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.ListFragment
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.Stopwatch
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.adapters.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         setUpTabs()
+
     }
 
     private fun setUpTabs() {
