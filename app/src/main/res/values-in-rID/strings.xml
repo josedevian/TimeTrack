@@ -15,4 +15,5 @@
     <string name="delete">Hapus</string>
     <string name="save_alert">Simpan Waktu sebagai Tugas</string>
     <string name="success_save">Tugas berhasil disimpan.</string>
+    <string name="hint_save_task">Masukan nama tugas...</string>
 </resources>

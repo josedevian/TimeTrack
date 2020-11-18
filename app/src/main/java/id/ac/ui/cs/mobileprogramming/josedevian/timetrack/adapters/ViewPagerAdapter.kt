@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.adapters
+package id.ac.ui.cs.mobileprogramming.josedevian.timetrack.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

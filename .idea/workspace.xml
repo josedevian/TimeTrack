@@ -11,17 +11,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/TimeTrack.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/TimeTrack.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/fragments/Stopwatch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/fragments/Stopwatch.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/fragments/Stopwatch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/fragments/StopwatchFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/fragments/adapters/ViewPagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/adapters/ViewPagerAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stopwatch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stopwatch.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-in-rID/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-in-rID/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +36,10 @@
       <list>
         <option value="valueResourceFile" />
         <option value="Kotlin Class" />
-        <option value="Kotlin File" />
         <option value="Kotlin Interface" />
+        <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -68,6 +66,9 @@
     <key name="android.template.-688482046">
       <recent name="id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="id.ac.ui.cs.mobileprogramming.josedevian.timetrack" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -77,7 +78,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="TimeTrack.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -149,9 +150,45 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="458" y="203" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1605631891488">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="458" y="203" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1440.837@0.23.1440.837" timestamp="1605631891488" />
+    <state x="6" y="372" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1605580609529">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="6" y="372" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1440.837@0.23.1440.837" timestamp="1605580609529" />
+    <state x="398" y="329" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1605580612882">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="398" y="329" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.23.1440.837@0.23.1440.837" timestamp="1605580612882" />
     <state x="412" y="215" width="621" height="451" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1605525462777">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="412" y="215" width="621" height="451" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1440.837@0.23.1440.837" timestamp="1605525462777" />
+    <state x="308" y="203" key="AndroidCreateResourceFileDialog" timestamp="1605628190732">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="308" y="203" key="AndroidCreateResourceFileDialog/0.23.1440.837@0.23.1440.837" timestamp="1605628190732" />
+    <state width="1396" height="217" key="GridCell.Tab.0.bottom" timestamp="1605714692853">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state width="1396" height="217" key="GridCell.Tab.0.bottom/0.23.1440.837@0.23.1440.837" timestamp="1605714692853" />
+    <state width="1396" height="217" key="GridCell.Tab.0.center" timestamp="1605714692853">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state width="1396" height="217" key="GridCell.Tab.0.center/0.23.1440.837@0.23.1440.837" timestamp="1605714692853" />
+    <state width="1396" height="217" key="GridCell.Tab.0.left" timestamp="1605714692853">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state width="1396" height="217" key="GridCell.Tab.0.left/0.23.1440.837@0.23.1440.837" timestamp="1605714692853" />
+    <state width="1396" height="217" key="GridCell.Tab.0.right" timestamp="1605714692853">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state width="1396" height="217" key="GridCell.Tab.0.right/0.23.1440.837@0.23.1440.837" timestamp="1605714692853" />
+    <state x="385" y="184" key="search.everywhere.popup" timestamp="1605621740222">
+      <screen x="0" y="23" width="1440" height="837" />
+    </state>
+    <state x="385" y="184" key="search.everywhere.popup/0.23.1440.837@0.23.1440.837" timestamp="1605621740222" />
   </component>
 </project>
