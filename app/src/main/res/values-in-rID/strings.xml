@@ -16,4 +16,6 @@
     <string name="save_alert">Simpan Waktu sebagai Tugas</string>
     <string name="success_save">Tugas berhasil disimpan.</string>
     <string name="hint_save_task">Masukan nama tugas...</string>
+    <string name="notification_title">Baterai perangkat Anda sudah mulai habis</string>
+    <string name="notification_message">Segera isi daya perangkat Anda agar aplikasi dapat tetap berjalan.</string>
 </resources>
