@@ -27,4 +27,9 @@ class ViewPagerAdapter(supportFragmentManager: FragmentManager) :
         mFragmentTitleList.add(title)
     }
 
+    fun removeFragment(fragment: Fragment, title: String) {
+        mFragmentList.remove(fragment)
+        mFragmentTitleList.remove(title)
+    }
+
 }

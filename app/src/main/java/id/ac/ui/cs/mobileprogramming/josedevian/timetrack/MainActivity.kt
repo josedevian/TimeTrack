@@ -1,6 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.josedevian.timetrack
 
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import android.os.SystemClock
@@ -11,11 +12,10 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.adapters.ViewPagerAdapter
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.ListFragment
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.StopwatchFragment
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.adapters.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.zip.Inflater
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mRunnable: Runnable
     var duration: Long = 0
 
-    var startStopBtn: Button? = null
-    var saveBtn: Button? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -52,9 +49,11 @@ class MainActivity : AppCompatActivity() {
             milliSeconds = (updateTime % 100).toInt();
             mHandler.postDelayed(this.mRunnable, 0);
             stopwatchText?.text =
-                (String.format("%02d", minutes) + ":" + String.format("%02d", seconds) + ":" + String.format("%02d", milliSeconds));
+                (String.format("%02d", minutes) + ":" + String.format(
+                    "%02d",
+                    seconds
+                ) + ":" + String.format("%02d", milliSeconds));
         }
-
 
 
     }
@@ -97,8 +96,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun hideKeyboard() {
-        val inputManager: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputManager.hideSoftInputFromWindow(currentFocus?.windowToken, InputMethodManager.SHOW_FORCED)
+        val inputManager: InputMethodManager =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputManager.hideSoftInputFromWindow(
+            currentFocus?.windowToken,
+            InputMethodManager.SHOW_FORCED
+        )
     }
 
     override fun onBackPressed() {
@@ -113,18 +116,27 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    fun showEditTextDialog() {
-
+    fun showSaveTaskDialog() {
         val builder = AlertDialog.Builder(this)
-        val inflater = LayoutInflater
-        val dialogLayout = inflater.inflate(R.layout.text_input_dialog, null)
+        val dialogLayout = layoutInflater.inflate(R.layout.text_input_dialog, null)
         val editText = dialogLayout.findViewById<EditText>(R.id.edit_task_name)
 
         with(builder) {
             setTitle(R.string.save_alert)
-            setPositiveButton(R.string.save){dialog, which}
+            setPositiveButton(R.string.save) { dialog, which -> }
         }
 
+    }
 
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        val newOrientation: Int = newConfig.orientation
+        if (newOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+            adapter.removeFragment(ListFragment(), "Logs")
+        }
+        if (newOrientation == Configuration.ORIENTATION_PORTRAIT) {
+            adapter.addFragment(ListFragment(), "Logs")
+        }
     }
 }
