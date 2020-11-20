@@ -21,12 +21,15 @@ import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.ListFragment
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.StopwatchFragment
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.utils.BatteryPercentageChecker
 import kotlinx.android.synthetic.main.activity_main.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class MainActivity : AppCompatActivity() {
 
     var stopwatchIsRunning: Boolean = false
     var stopwatchText: TextView? = null
+    private var taskDate: String? = null
     private var millisecondTime: Long = 0
     private var startTime: Long = 0
     private var timeBuff: Long = 0
@@ -38,7 +41,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mRunnable: Runnable
     private val CHANNEL_ID = "channel_id_battery_low"
     private val notificationId = 101
-    var duration: Long = 0
+//    lateinit var mService: FetchService
+//    var mBound: Boolean = false
+    var duration: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +83,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startStopwatch() {
+        taskDate = java.util.Calendar.getInstance().toString()
         startTime = SystemClock.uptimeMillis()
         mHandler.postDelayed(mRunnable, 0)
         stopwatchIsRunning = true
@@ -90,6 +96,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun resetStopwatch() {
+        taskDate = null
         millisecondTime = 0
         startTime = 0
         timeBuff = 0
@@ -100,7 +107,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun saveStopwatch() {
-        duration = timeBuff
+        duration = stopwatchText.toString()
     }
 
     fun hideKeyboard() {
@@ -141,6 +148,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         val newOrientation: Int = newConfig.orientation
         if (newOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+
             adapter.removeFragment(ListFragment(), "Logs")
         }
         if (newOrientation == Configuration.ORIENTATION_PORTRAIT) {

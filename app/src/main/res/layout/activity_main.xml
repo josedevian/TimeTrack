@@ -11,6 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:title="@string/app_name"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:titleTextColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"

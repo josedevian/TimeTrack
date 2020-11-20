@@ -23,6 +23,7 @@ class StopwatchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val factory =
         val view = inflater.inflate(R.layout.fragment_stopwatch, container, false)
         val stopwatch = view.findViewById<TextView>(R.id.stopwatch)
         val startStopButton = view.findViewById<Button>(R.id.start_stop_stopwatch)
@@ -55,7 +56,7 @@ class StopwatchFragment : Fragment() {
 
         resetButton.setOnClickListener {
             (activity as MainActivity).resetStopwatch()
-            stopwatch.text = "00:00:00"
+            stopwatch.text = "00:00.00"
             saveButton.isEnabled = false
         }
 
