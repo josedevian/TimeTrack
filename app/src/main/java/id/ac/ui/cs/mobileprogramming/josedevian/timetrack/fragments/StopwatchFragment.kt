@@ -30,7 +30,6 @@ class StopwatchFragment : Fragment() {
     var title: String? = null
     var date: String? = null
     private lateinit var taskViewModel: TaskViewModel
-//    private lateinit var mainAdapter
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(

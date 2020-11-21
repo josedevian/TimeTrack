@@ -12,9 +12,9 @@ interface TaskDao {
     fun getTask(): LiveData<List<Task>>
 
     @Insert(onConflict = REPLACE)
-    suspend fun insert(task: id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task)
+    suspend fun insert(task: Task)
 
     @Delete
-    suspend fun delete(task: id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task)
+    suspend fun delete(task: Task)
 
 }
