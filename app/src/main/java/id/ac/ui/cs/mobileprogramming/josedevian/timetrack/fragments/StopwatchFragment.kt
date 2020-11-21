@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments
 
+import android.os.Build
 import androidx.appcompat.app.AlertDialog
 import android.os.Bundle
 import android.os.Handler
@@ -11,6 +12,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -30,6 +32,7 @@ class StopwatchFragment : Fragment() {
     private lateinit var taskViewModel: TaskViewModel
 //    private lateinit var mainAdapter
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

@@ -3,7 +3,7 @@ package id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data
 import android.app.Application
 import androidx.lifecycle.LiveData
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.dao.TaskDao
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.model.Task
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -23,13 +23,13 @@ class TaskRepository (application: Application) {
         return tasks
     }
 
-    fun insert(task: id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task) = runBlocking {
+    fun insert(task: Task) = runBlocking {
         this.launch(Dispatchers.IO) {
             taskDao?.insert(task)
         }
     }
 
-    fun delete(task: id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task) {
+    fun delete(task: Task) {
         runBlocking {
             this.launch(Dispatchers.IO) {
                 taskDao?.delete(task)

@@ -12,14 +12,19 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.recyclerview.widget.RecyclerView
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.adapters.TaskListAdapter
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.adapters.ViewPagerAdapter
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.ListFragment
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.StopwatchFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     private val CHANNEL_ID = "channel_id_battery_low"
     private val notificationId = 101
     var duration: String? = null
+    lateinit var mainAdapter: TaskListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,8 +82,11 @@ class MainActivity : AppCompatActivity() {
         tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_view_list_24)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun startStopwatch() {
-        taskDate = java.util.Calendar.getInstance().toString()
+        val now = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("dd-Mm-yyyy HH:mm")
+        taskDate = now.format(formatter).toString()
         startTime = SystemClock.uptimeMillis()
         mHandler.postDelayed(mRunnable, 0)
         stopwatchIsRunning = true
@@ -125,19 +134,6 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        val adapter = ViewPagerAdapter(supportFragmentManager)
-        val newOrientation: Int = newConfig.orientation
-        if (newOrientation == Configuration.ORIENTATION_LANDSCAPE) {
-
-            adapter.removeFragment(ListFragment(), "Logs")
-        }
-        if (newOrientation == Configuration.ORIENTATION_PORTRAIT) {
-            adapter.addFragment(ListFragment(), "Logs")
-        }
-    }
-
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = R.string.notification_title.toString()
@@ -168,7 +164,7 @@ class MainActivity : AppCompatActivity() {
             sendNotification()
         }
     }
-//
+
     fun getBatteryPercentage(context: Context): Int {
         return if (Build.VERSION.SDK_INT >= 21) {
             val bm = context.getSystemService(BATTERY_SERVICE) as BatteryManager

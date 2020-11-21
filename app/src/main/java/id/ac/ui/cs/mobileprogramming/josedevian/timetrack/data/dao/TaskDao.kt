@@ -3,7 +3,7 @@ package id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.OnConflictStrategy.REPLACE
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.model.Task
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task
 
 @Dao
 interface TaskDao {

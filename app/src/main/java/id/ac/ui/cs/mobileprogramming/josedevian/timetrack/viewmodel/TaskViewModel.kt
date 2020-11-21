@@ -8,13 +8,13 @@ import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task
 
 class TaskViewModel(application: Application) : AndroidViewModel(application) {
     var taskRepository = TaskRepository(application)
-    private var tasks: LiveData<List<id.ac.ui.cs.mobileprogramming.josedevian.timetrack.model.Task>>? = taskRepository.getTasks()
+    private var tasks: LiveData<List<Task>>? = taskRepository.getTasks()
 
     fun insertTask(task: Task) {
         taskRepository.insert(task)
     }
 
-    fun getTasks(): LiveData<List<id.ac.ui.cs.mobileprogramming.josedevian.timetrack.model.Task>>? {
+    fun getTasks(): LiveData<List<Task>>? {
         return tasks
     }
 
