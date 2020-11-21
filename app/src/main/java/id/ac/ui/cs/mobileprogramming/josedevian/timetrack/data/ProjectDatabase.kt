@@ -5,9 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.dao.ProjectDao
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.ProjectEntity
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Project
 
-@Database(entities = [ProjectEntity::class], version = 2, exportSchema = false)
+@Database(entities = [Project::class], version = 2, exportSchema = false)
 abstract class ProjectDatabase : RoomDatabase() {
 
     abstract fun projectDao(): ProjectDao

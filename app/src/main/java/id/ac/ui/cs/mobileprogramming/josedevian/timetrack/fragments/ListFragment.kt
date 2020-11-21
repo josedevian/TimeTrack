@@ -6,15 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.MainActivity
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.R
-import kotlinx.android.synthetic.main.activity_main.*
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.adapters.TaskListAdapter
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.viewmodel.TaskViewModel
 
 
 class ListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
+    private lateinit var viewModel: TaskViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,9 +36,12 @@ class ListFragment : Fragment() {
             recyclerView.layoutManager = GridLayoutManager(activity, 1)
         }
 
-        if ((activity as MainActivity).mBound) {
-            (activity as MainActivity).mService.fetchData()
-            (activity as MainActivity).mService.
-        }
+        viewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
+        viewModel.getTasks()?.observe(viewLifecycleOwner, Observer { listTask ->
+            val adapter = TaskListAdapter(activity as MainActivity, listTask)
+            recyclerView.adapter = adapter
+        })
+
+        return itemView
     }
 }

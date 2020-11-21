@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.model.Task
 
 @Entity(tableName = "project_table")
-data class ProjectEntity (
+data class Project (
     @PrimaryKey(autoGenerate = true)
         val id: Int = 0,
 
@@ -14,5 +14,5 @@ data class ProjectEntity (
         val projectName: String?,
 
     @ColumnInfo(name = "projectTasks")
-        val projectTasks: List<Task>,
+        val projectTasks: String?,
 )

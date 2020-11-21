@@ -7,11 +7,11 @@ import androidx.room.RoomDatabase
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.dao.LabelDao
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.dao.ProjectDao
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.dao.TaskDao
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.LabelEntity
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.ProjectEntity
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.TaskEntity
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Label
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Project
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task
 
-@Database(entities = [TaskEntity::class, ProjectEntity::class, LabelEntity::class], version = 1, exportSchema = false)
+@Database(entities = [Task::class, Project::class, Label::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun taskDao(): TaskDao

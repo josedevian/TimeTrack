@@ -7,38 +7,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9386fb8-2f4f-4ee5-a18e-a054eeaf4eb4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/AppDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/TimeTrack.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/TimeTrack.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/TaskDatabase.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/AppDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/ProjectDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/ProjectDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/TaskRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/TaskRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/dao/LabelDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/dao/LabelDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/dao/ProjectDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/dao/ProjectDao.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/dao/TaskDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/dao/TaskDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/entity/TaskEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/entity/TaskEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/entity/Label.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/entity/Label.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/entity/Project.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/entity/Project.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/entity/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/data/entity/Task.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/fragments/ListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/fragments/ListFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/fragments/StopwatchFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/fragments/StopwatchFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/model/Label.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/model/Label.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/model/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/model/Task.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/viewmodel/TaskViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/josedevian/timetrack/viewmodel/TaskViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3_API_30]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -51,9 +52,9 @@
         <option value="Kotlin Interface" />
         <option value="resourceFile" />
         <option value="layoutResourceFile" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -164,10 +165,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="458" y="203" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1605798813866">
+    <state x="458" y="203" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1605953389582">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state x="458" y="203" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1440.837@0.23.1440.837" timestamp="1605798813866" />
+    <state x="458" y="203" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1440.837@0.23.1440.837" timestamp="1605953389582" />
     <state x="6" y="372" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1605580609529">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
@@ -188,22 +189,22 @@
       <screen x="0" y="23" width="1440" height="837" />
     </state>
     <state x="542" y="225" key="AndroidCreateXmlResourceDialog/0.23.1440.837@0.23.1440.837" timestamp="1605861448776" />
-    <state width="1396" height="217" key="GridCell.Tab.0.bottom" timestamp="1605714692853">
+    <state width="1396" height="217" key="GridCell.Tab.0.bottom" timestamp="1605962633315">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state width="1396" height="217" key="GridCell.Tab.0.bottom/0.23.1440.837@0.23.1440.837" timestamp="1605714692853" />
-    <state width="1396" height="217" key="GridCell.Tab.0.center" timestamp="1605714692853">
+    <state width="1396" height="217" key="GridCell.Tab.0.bottom/0.23.1440.837@0.23.1440.837" timestamp="1605962633315" />
+    <state width="1396" height="217" key="GridCell.Tab.0.center" timestamp="1605962633314">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state width="1396" height="217" key="GridCell.Tab.0.center/0.23.1440.837@0.23.1440.837" timestamp="1605714692853" />
-    <state width="1396" height="217" key="GridCell.Tab.0.left" timestamp="1605714692853">
+    <state width="1396" height="217" key="GridCell.Tab.0.center/0.23.1440.837@0.23.1440.837" timestamp="1605962633314" />
+    <state width="1396" height="217" key="GridCell.Tab.0.left" timestamp="1605962633314">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state width="1396" height="217" key="GridCell.Tab.0.left/0.23.1440.837@0.23.1440.837" timestamp="1605714692853" />
-    <state width="1396" height="217" key="GridCell.Tab.0.right" timestamp="1605714692853">
+    <state width="1396" height="217" key="GridCell.Tab.0.left/0.23.1440.837@0.23.1440.837" timestamp="1605962633314" />
+    <state width="1396" height="217" key="GridCell.Tab.0.right" timestamp="1605962633314">
       <screen x="0" y="23" width="1440" height="837" />
     </state>
-    <state width="1396" height="217" key="GridCell.Tab.0.right/0.23.1440.837@0.23.1440.837" timestamp="1605714692853" />
+    <state width="1396" height="217" key="GridCell.Tab.0.right/0.23.1440.837@0.23.1440.837" timestamp="1605962633314" />
     <state x="385" y="184" key="search.everywhere.popup" timestamp="1605621740222">
       <screen x="0" y="23" width="1440" height="837" />
     </state>

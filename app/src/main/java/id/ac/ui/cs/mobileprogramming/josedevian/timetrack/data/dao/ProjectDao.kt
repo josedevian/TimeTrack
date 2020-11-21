@@ -2,21 +2,20 @@ package id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import androidx.room.OnConflictStrategy.REPLACE
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.ProjectEntity
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Project
 
 @Dao
 interface ProjectDao {
 
     @Query("SELECT * FROM project_table")
-    fun getAll(): LiveData<List<@JvmSuppressWildcards ProjectEntity>>
+    fun getAll(): LiveData<List<Project>>
 
-    @Insert(onConflict = REPLACE)
-    fun insert(project: ProjectEntity)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(project: Project)
 
     @Update
-    fun update(project: ProjectEntity)
+    suspend fun update(project: Project)
 
     @Delete
-    fun delete(project: ProjectEntity)
+    suspend fun delete(project: Project)
 }

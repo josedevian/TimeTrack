@@ -23,13 +23,13 @@ class TaskRepository (application: Application) {
         return tasks
     }
 
-    fun insert(task: Task) = runBlocking {
+    fun insert(task: id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task) = runBlocking {
         this.launch(Dispatchers.IO) {
             taskDao?.insert(task)
         }
     }
 
-    fun delete(task: Task) {
+    fun delete(task: id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task) {
         runBlocking {
             this.launch(Dispatchers.IO) {
                 taskDao?.delete(task)

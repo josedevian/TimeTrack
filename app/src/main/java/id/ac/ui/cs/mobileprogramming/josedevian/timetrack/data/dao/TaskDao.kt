@@ -8,13 +8,13 @@ import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.model.Task
 @Dao
 interface TaskDao {
 
-    @Query("SELECT * FROM task ORDER_BY id DESC")
+    @Query("SELECT * FROM task")
     fun getTask(): LiveData<List<Task>>
 
     @Insert(onConflict = REPLACE)
-    suspend fun insert(task: Task)
+    suspend fun insert(task: id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task)
 
     @Delete
-    suspend fun delete(task: Task)
+    suspend fun delete(task: id.ac.ui.cs.mobileprogramming.josedevian.timetrack.data.entity.Task)
 
 }

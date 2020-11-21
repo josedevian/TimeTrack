@@ -7,11 +7,11 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.res.Configuration
 import android.os.*
-import android.view.LayoutInflater
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
@@ -19,17 +19,14 @@ import androidx.core.app.NotificationManagerCompat
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.adapters.ViewPagerAdapter
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.ListFragment
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.fragments.StopwatchFragment
-import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.utils.BatteryPercentageChecker
 import kotlinx.android.synthetic.main.activity_main.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 
 class MainActivity : AppCompatActivity() {
 
     var stopwatchIsRunning: Boolean = false
     var stopwatchText: TextView? = null
-    private var taskDate: String? = null
+    var taskDate: String? = null
     private var millisecondTime: Long = 0
     private var startTime: Long = 0
     private var timeBuff: Long = 0
@@ -41,8 +38,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mRunnable: Runnable
     private val CHANNEL_ID = "channel_id_battery_low"
     private val notificationId = 101
-//    lateinit var mService: FetchService
-//    var mBound: Boolean = false
     var duration: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,8 +62,7 @@ class MainActivity : AppCompatActivity() {
                     seconds
                 ) + ":" + String.format("%02d", milliSeconds));
         }
-
-
+        batteryNotifier()
     }
 
     private fun setUpTabs() {
@@ -131,18 +125,6 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    fun showSaveTaskDialog() {
-        val builder = AlertDialog.Builder(this)
-        val dialogLayout = layoutInflater.inflate(R.layout.text_input_dialog, null)
-        val editText = dialogLayout.findViewById<EditText>(R.id.edit_task_name)
-
-        with(builder) {
-            setTitle(R.string.save_alert)
-            setPositiveButton(R.string.save) { dialog, which -> }
-        }
-
-    }
-
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         val adapter = ViewPagerAdapter(supportFragmentManager)
@@ -181,22 +163,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    fun batteryNotifier() {
-//        val batteryLevel = getBatteryPercentage()
-//        if(getBatteryPercentage() <= 10)
-//    }
+    fun batteryNotifier() {
+        if(getBatteryPercentage(this) <= 10 && stopwatchIsRunning) {
+            sendNotification()
+        }
+    }
 //
-//    fun getBatteryPercentage(context: Context): Int {
-//        return if (Build.VERSION.SDK_INT >= 21) {
-//            val bm = context.getSystemService(BATTERY_SERVICE) as BatteryManager
-//            bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
-//        } else {
-//            val iFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
-//            val batteryStatus: Intent? = context.registerReceiver(null, iFilter)
-//            val level = batteryStatus?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
-//            val scale = batteryStatus?.getIntExtra(BatteryManager.EXTRA_SCALE, -1) ?: -1
-//            val batteryPct = level / scale.toDouble()
-//            (batteryPct * 100).toInt()
-//        }
-//    }
+    fun getBatteryPercentage(context: Context): Int {
+        return if (Build.VERSION.SDK_INT >= 21) {
+            val bm = context.getSystemService(BATTERY_SERVICE) as BatteryManager
+            bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+        } else {
+            val iFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
+            val batteryStatus: Intent? = context.registerReceiver(null, iFilter)
+            val level = batteryStatus?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
+            val scale = batteryStatus?.getIntExtra(BatteryManager.EXTRA_SCALE, -1) ?: -1
+            val batteryPct = level / scale.toDouble()
+            (batteryPct * 100).toInt()
+        }
+    }
 }
