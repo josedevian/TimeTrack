@@ -17,5 +17,6 @@
     <string name="hint_save_task">Enter task name...</string>
     <string name="notification_title">Your device\'s battery is low</string>
     <string name="notification_message">Charge your device to keep the tracker running.</string>
+    <string name="title_activity_geofencing">Map</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

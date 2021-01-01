@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.MainActivity
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.R
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.adapters.TaskListAdapter
 import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.viewmodel.TaskViewModel
@@ -19,6 +21,7 @@ import id.ac.ui.cs.mobileprogramming.josedevian.timetrack.viewmodel.TaskViewMode
 
 class ListFragment() : Fragment() {
     private lateinit var viewModel: TaskViewModel
+    private lateinit var taskCounter: TextView
     lateinit var recyclerView: RecyclerView
     lateinit var mainAdapter: TaskListAdapter
 
@@ -26,7 +29,6 @@ class ListFragment() : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         mainAdapter = TaskListAdapter(this) { task, i ->
             Log.d("Main", "yes")
         }
@@ -44,6 +46,10 @@ class ListFragment() : Fragment() {
 
         recyclerView.adapter = mainAdapter
 
+        taskCounter = itemView.findViewById(R.id.taskCount)
+        var format: String = String.format("Tasks (%d)", (activity as MainActivity).totalTaskCount)
+
+        taskCounter.text = format
         return itemView
     }
 }

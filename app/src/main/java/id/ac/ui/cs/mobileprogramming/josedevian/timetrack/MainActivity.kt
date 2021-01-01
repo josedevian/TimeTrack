@@ -2,11 +2,13 @@ package id.ac.ui.cs.mobileprogramming.josedevian.timetrack
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.res.Configuration
 import android.os.*
+import android.os.BatteryManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
@@ -32,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     var stopwatchIsRunning: Boolean = false
     var stopwatchText: TextView? = null
     var taskDate: String? = null
+    var totalTaskCount: Int = 0
     private var millisecondTime: Long = 0
     private var startTime: Long = 0
     private var timeBuff: Long = 0
@@ -46,6 +49,13 @@ class MainActivity : AppCompatActivity() {
     var duration: String? = null
     lateinit var mainAdapter: TaskListAdapter
 
+    companion object {
+        // Used to load the 'native-lib' library on application startup.
+        init {
+            System.loadLibrary("native-lib")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -53,22 +63,24 @@ class MainActivity : AppCompatActivity() {
         createNotificationChannel()
         setUpTabs()
 
+        val intentFilter = IntentFilter(Intent.ACTION_BATTERY_LOW)
+        registerReceiver(batteryBroadcastReceiver, intentFilter)
+
         mHandler = Handler()
         mRunnable = Runnable {
             millisecondTime = SystemClock.uptimeMillis() - startTime
-            updateTime = timeBuff + millisecondTime;
-            seconds = (updateTime / 1000).toInt();
-            minutes = seconds / 60;
-            seconds %= 60;
-            milliSeconds = (updateTime % 100).toInt();
-            mHandler.postDelayed(this.mRunnable, 0);
+            updateTime = timeBuff + millisecondTime
+            seconds = (updateTime / 1000).toInt()
+            minutes = seconds / 60
+            seconds %= 60
+            milliSeconds = (updateTime % 100).toInt()
+            mHandler.postDelayed(this.mRunnable, 0)
             stopwatchText?.text =
                 (String.format("%02d", minutes) + ":" + String.format(
                     "%02d",
                     seconds
-                ) + ":" + String.format("%02d", milliSeconds));
+                ) + ":" + String.format("%02d", milliSeconds))
         }
-        batteryNotifier()
     }
 
     private fun setUpTabs() {
@@ -85,7 +97,7 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun startStopwatch() {
         val now = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofPattern("dd-Mm-yyyy HH:mm")
+        val formatter = DateTimeFormatter.ofPattern("dd-M-yyyy HH:mm")
         taskDate = now.format(formatter).toString()
         startTime = SystemClock.uptimeMillis()
         mHandler.postDelayed(mRunnable, 0)
@@ -137,10 +149,10 @@ class MainActivity : AppCompatActivity() {
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = R.string.notification_title.toString()
-            val notifDesc = R.string.notification_message.toString()
+            val descriptionText = R.string.notification_message.toString()
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
-                description = notifDesc.toString()
+                description = descriptionText
             }
             val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
@@ -148,10 +160,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendNotification() {
+        val notificationTitle = resources.getString(R.string.notification_title)
+        val notificationText = resources.getString(R.string.notification_message)
+
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
-            .setContentTitle(R.string.notification_title.toString())
-            .setContentText(R.string.notification_message.toString())
+            .setContentTitle(notificationTitle)
+            .setContentText(notificationText)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         with(NotificationManagerCompat.from(this)) {
@@ -159,23 +174,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun batteryNotifier() {
-        if(getBatteryPercentage(this) <= 10 && stopwatchIsRunning) {
-            sendNotification()
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(batteryBroadcastReceiver)
+    }
+
+    private val batteryBroadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if((intent?.action == "android.intent.action.BATTERY_LOW") && stopwatchIsRunning) {
+                sendNotification()
+            }
         }
     }
 
-    fun getBatteryPercentage(context: Context): Int {
-        return if (Build.VERSION.SDK_INT >= 21) {
-            val bm = context.getSystemService(BATTERY_SERVICE) as BatteryManager
-            bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
-        } else {
-            val iFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
-            val batteryStatus: Intent? = context.registerReceiver(null, iFilter)
-            val level = batteryStatus?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
-            val scale = batteryStatus?.getIntExtra(BatteryManager.EXTRA_SCALE, -1) ?: -1
-            val batteryPct = level / scale.toDouble()
-            (batteryPct * 100).toInt()
-        }
-    }
+    external fun increaseTaskCount(count: Int): Int
+
 }

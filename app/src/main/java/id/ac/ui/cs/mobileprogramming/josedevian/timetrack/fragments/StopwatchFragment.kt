@@ -87,6 +87,7 @@ class StopwatchFragment : Fragment() {
                         null.toString(), null.toString()
                     ))
                     (activity as MainActivity).resetStopwatch()
+                    (activity as MainActivity).totalTaskCount = (activity as MainActivity).increaseTaskCount((activity as MainActivity).totalTaskCount)
                     val successToast = Toast.makeText((activity as MainActivity), R.string.success_save, Toast.LENGTH_SHORT)
                     successToast.show()
                 }

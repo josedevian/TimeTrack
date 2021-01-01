@@ -28,9 +28,20 @@ android {
         dataBinding = true
         viewBinding = true
     }
+
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jni/Android.mk')
+        }
+    }
+
+    ndkVersion '21.3.6528147'
 }
 
 dependencies {
+    def room_version = "2.2.5"
+    def daggerVersion = "2.20"
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.1.0'
@@ -48,12 +59,15 @@ dependencies {
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation 'android.arch.lifecycle:reactivestreams:1.1.1'
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
     kapt "androidx.lifecycle:lifecycle-compiler:2.2.0"
     kapt "androidx.room:room-compiler:2.2.5"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
-    def room_version = "2.2.5"
 
 }
