@@ -24,6 +24,7 @@ class ListFragment() : Fragment() {
     private lateinit var taskCounter: TextView
     lateinit var recyclerView: RecyclerView
     lateinit var mainAdapter: TaskListAdapter
+    var sumOfTask: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,14 +43,14 @@ class ListFragment() : Fragment() {
         viewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
         viewModel.getTasks()?.observe(viewLifecycleOwner, Observer {
             mainAdapter.setTasks(it)
+            (activity as MainActivity).totalTaskCount = mainAdapter.itemCount
+            sumOfTask = (activity as MainActivity).totalTaskCount
+            taskCounter = itemView.findViewById(R.id.taskCount)
+            taskCounter.text = "Tasks ($sumOfTask)"
         })
 
         recyclerView.adapter = mainAdapter
 
-        taskCounter = itemView.findViewById(R.id.taskCount)
-        var format: String = String.format("Tasks (%d)", (activity as MainActivity).totalTaskCount)
-
-        taskCounter.text = format
         return itemView
     }
 }

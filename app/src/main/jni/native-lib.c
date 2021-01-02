@@ -7,6 +7,5 @@
 
 JNIEXPORT jint JNICALL
 Java_id_ac_ui_cs_mobileprogramming_josedevian_timetrack_MainActivity_increaseTaskCount(JNIEnv *env, jobject thiz, jint count) {
-    count = count + 1;
-    return count;
+    return count + 1;
 }

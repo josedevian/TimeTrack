@@ -18,5 +18,10 @@
     <string name="notification_title">Your device\'s battery is low</string>
     <string name="notification_message">Charge your device to keep the tracker running.</string>
     <string name="title_activity_geofencing">Map</string>
+    <string name="geofence_start_title">You\'re arriving at Faculty of Computer Science, UI</string>
+    <string name="geofence_start_message">The task tracker has been started.</string>
+    <string name="geofence_exit_title">You\'re leaving Faculty of Computer Science, UI</string>
+    <string name="geofence_exit_message">The task tracker has been stopped, open the app to save the task.</string>
+    <string name="connectivity_required">"Geofencing will not be working if there's no internet connection. "</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

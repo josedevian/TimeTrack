@@ -18,4 +18,10 @@
     <string name="hint_save_task">Masukan nama tugas...</string>
     <string name="notification_title">Baterai perangkat Anda sudah mulai habis</string>
     <string name="notification_message">Segera isi daya perangkat Anda agar aplikasi dapat tetap berjalan.</string>
+    <string name="title_activity_geofencing">Peta</string>
+    <string name="geofence_start_title">Anda telah sampai di Fakultas Ilmu Komputer UI</string>
+    <string name="geofence_start_message">Pelacak tugas telah dimulai.</string>
+    <string name="geofence_exit_title">Anda meninggalkan Fakultas Ilmu Komputer UI</string>
+    <string name="geofence_exit_message">Pelacak tugas telah dihentikan, buka aplikasi untuk menyimpan tugas.</string>
+    <string name="connectivity_required">Pelacak lokasi tidak akan bekerja jika tidak ada koneksi internet.</string>
 </resources>
